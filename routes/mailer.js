@@ -21,20 +21,20 @@ router.get('/', function(req, res, next) {
     mailer.use(
       "compile",
       pugEngine({
-        templateDir: __dirname + "/views",
+        templateDir: __dirname + "/Mails",
         pretty: true,
       })
     );
 
     mailer.sendMail({
-      to: config.email,
-      template: `${config.appName}/${config.form}`, 
+      to: to.email,
+      template: `${config.form}`, 
       subject: `${config.subject}`,
       from:`${to.name}`,
       ctx: form ,
     });
 
-    res.json({"message":"email enviado"});
+    res.json({"message":"mailer"});
   } else {
     res.json({ message: "falta la configuracion" });
   }
