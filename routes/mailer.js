@@ -4,8 +4,8 @@ const nodemailer = require("nodemailer");
 var body_parser = require("body-parser");
 const { pugEngine } = require("nodemailer-pug-engine");
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  if (req.body.config) {
+router.post('/', function(req, res, next) {
+  if (true) {
     var config = req.body.config;
     var from = req.body.from;
     var to = req.body.to;
