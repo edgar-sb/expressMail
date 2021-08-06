@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 
     mailer.sendMail({
       to: to.email,
-      template: `${config.form}`, 
+      template: `${config.appName}/${config.form}`, 
       subject: `${config.subject}`,
       from:`${to.name}`,
       ctx: form ,
